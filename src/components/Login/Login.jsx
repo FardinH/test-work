@@ -3,9 +3,10 @@ import "./Login.scss"
 
 import { Formik, Form, Field } from 'formik';
 
-import { requiredValue, requiredPhone } from "../Form/FormValidators/Validators.js"
+import { requiredValue, requiredPhone } from "../../Form/FormValidators/Validators.js"
+import { PhoneField } from '../../Form/PhoneField';
 import AuthButton from '../commons/Buttons/AuthButton';
-import { PhoneField } from '../Form/PhoneField';
+
 
 export default function Login({ setActiveRestorePassword, restorePhone, dataValidate, setValidateState}) {
     

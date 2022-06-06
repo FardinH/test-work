@@ -4,8 +4,8 @@ import "../Login.scss"
 import { Formik, Form } from 'formik';
 
 import AuthButton from '../../commons/Buttons/AuthButton';
-import { requiredPhone } from "../../Form/FormValidators/Validators.js"
-import { PhoneField } from '../../Form/PhoneField';
+import { requiredPhone } from "../../../Form/FormValidators/Validators.js"
+import { PhoneField } from '../../../Form/PhoneField';
 
 export default function RestorePassword({setActiveRestorePassword, setRestorePassword}) {
   return (
