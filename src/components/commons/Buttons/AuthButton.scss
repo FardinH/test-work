@@ -1,0 +1,39 @@
+.main-form-login__auth button {
+    width: 343px;
+    padding: 9px 0;
+    margin: 64px 0 90px 0;
+
+
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+
+    background: #F2B705;
+    border-radius: 5px;
+    border: none;
+
+    transition: 0.3s background;
+
+    @media (max-width: 1360px) {
+        margin-bottom: 43px;
+    }
+
+    @media (max-width: 360px) {
+        width: 323px;
+    }
+    
+
+    &:hover {
+        background: #da9328;
+    }
+
+    &:active {
+        background: rgb(255, 175, 2);
+    }
+}
