@@ -8,10 +8,8 @@ import { PhoneField } from '../../Form/PhoneField';
 import AuthButton from '../commons/Buttons/AuthButton';
 
 
-export default function Login({ setActiveRestorePassword, restorePhone, dataValidate, setValidateState}) {
+export default function Login({ setActiveRestorePassword, restorePhone, dataValidate }) {
     
-    console.log(restorePhone)
-
     return (
         <>
 
@@ -21,33 +19,33 @@ export default function Login({ setActiveRestorePassword, restorePhone, dataVali
                     password: '',
                 }}
 
-                onSubmit={values => {
-                    dataValidate(values, setValidateState)
-                    console.log(values)
+                onSubmit={(values, { setErrors }) => {
+                    dataValidate(values, setErrors)
                 }}
             >
                 {({ errors, touched }) => (
                     <Form>
                         <div className="main-form-login__input">
+                            {errors.authFail && <div className="errorMessage">{errors.authFail}</div>}
                             <PhoneField 
                                 errors={errors}
                                 touched={touched}
                                 validate={requiredPhone}
                             />
                         </div>
-
+                        
                         <div className="main-form-login__input">
                             {errors.password && touched.password && <div className="errorMessage">{errors.password}</div>}
+                            {errors.authFail && <div className="errorMessage">{errors.authFail}</div>}
                             <Field type="password" name="password" validate={requiredValue} />
                             <label>Введите пароль</label>
                         </div>
-
 
                         <div className="main-form-login__restore-pass">
                             <a onClick={() => setActiveRestorePassword(true)}>Забыли пароль?</a>
                         </div>
 
-                        <AuthButton
+                       <AuthButton
                             text={"Войти"}
                         />
 

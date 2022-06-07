@@ -8,20 +8,24 @@ import RestorePassword from './components/Login/RestorePassword/RestorePassword'
 import logo from "./assets/images/logo.png";
 
 // проверка данных на корректность (вызывает при sumbit формы)
-const dataValidate = (values, setValidateState) => {
-    console.log(values);
-    if (values.phone === "+71111111111" && values.password === "123456") {
-        setValidateState(true)
-    } else {
-        setValidateState(false)
-    }
-}
+
 
 function App() {
 
     const [activeRestorePassword, setActiveRestorePassword] = useState(false)
     const [restorePhone, setRestorePhone] = useState("")
+    const [password, setPasword] = useState("123456")
     const [validateState, setValidateState] = useState(null)
+
+    const dataValidate = (values, setErrors) => {
+        console.log(values);
+        if (values.phone === "+71111111111" && (values.password === password)) {
+            setValidateState(true)
+        } else {
+            setValidateState(false)
+            setErrors({authFail: "Логин или пароль неверный"})
+        }
+    }
 
     return (
         <div className="main-login">
@@ -40,18 +44,18 @@ function App() {
                                 setActiveRestorePassword={setActiveRestorePassword}
                                 restorePhone={restorePhone}
                                 dataValidate={dataValidate}
-                                setValidateState={setValidateState}
                             />  
                             : 
                             <RestorePassword
                                 setActiveRestorePassword={setActiveRestorePassword}
                                 setRestorePassword={setRestorePhone}
+                                setRestorePass={setPasword}
+                                password={password}
                             />   
                         }
                                                                 
                     
                     </div>
-
                 </div>
             </div>
         </div>

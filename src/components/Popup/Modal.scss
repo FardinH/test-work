@@ -1,0 +1,46 @@
+.modal-window {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.342);
+    position: fixed;
+    left: 0;
+    top: 0;
+    
+    animation-name: fadeWindow;
+    animation-duration: 0.4s;
+    
+
+    &__body {
+        color: rgb(43, 43, 43);
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    &__container {
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    
+        width: 210px;
+        padding: 20px;
+        
+        background: #FFFFFF;
+        box-shadow: -10px 7px 20px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+    
+        
+    }
+}
+
+
+@keyframes fadeWindow {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
